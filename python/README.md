@@ -34,6 +34,8 @@ uv sync
 uv run jupyter lab
 ```
 
+Använder du VS Code i stället för JupyterLab behöver notebooken köras med projektets Python. Klicka på **Select Kernel**, välj **Python Environments** och välj den i `python/.venv`. Notebook 01 kontrollerar att valet blev rätt.
+
 Starta sedan med `notebooks/01-miljo.ipynb`. En god vana är att alltid välja att starta om och köra alla celler innan vi litar på ett resultat.
 
 ## Output checkas inte in
