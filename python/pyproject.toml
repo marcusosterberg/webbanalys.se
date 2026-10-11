@@ -13,3 +13,8 @@ dependencies = [
     "matplotlib>=3.9",
     "jupyterlab>=4.2",
 ]
+
+[dependency-groups]
+dev = [
+    "nbstripout>=0.9.1",
+]

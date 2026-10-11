@@ -36,6 +36,19 @@ uv run jupyter lab
 
 Starta sedan med `notebooks/01-miljo.ipynb`. En god vana är att alltid välja att starta om och köra alla celler innan vi litar på ett resultat.
 
+## Output checkas inte in
+
+Notebooks i repot sparas utan output, eftersom resultatet beror på när vi hämtade data. Den som gör commits tar bort output automatiskt med [nbstripout](https://github.com/kynan/nbstripout). Filen `.gitattributes` pekar ut filtret, men själva kommandot behöver läggas in en gång per klon. Kör följande i repots rotmapp.
+
+```sh
+git config filter.nbstripout.clean "uvx --from nbstripout==0.9.1 nbstripout --extra-keys metadata.language_info"
+git config filter.nbstripout.smudge cat
+git config filter.nbstripout.required true
+git config diff.ipynb.textconv "uvx --from nbstripout==0.9.1 nbstripout -t"
+```
+
+Output finns kvar i våra egna notebooks men kommer inte med i någon commit.
+
 ## API-nyckel till CrUX
 
 Notebook 05 hämtar data från Chrome UX Report och kräver en kostnadsfri API-nyckel från Google. Nyckeln läses från miljövariabeln `CRUX_API_KEY` och ska aldrig checkas in.
