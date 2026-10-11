@@ -1,0 +1,11 @@
+# Data hämtas av var och en och checkas aldrig in
+data/*
+!data/.gitkeep
+
+# Python och Jupyter
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# Hemligheter
+.env
