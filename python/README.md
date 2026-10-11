@@ -53,11 +53,13 @@ Output finns kvar i våra egna notebooks men kommer inte med i någon commit.
 
 ## API-nyckel till CrUX
 
-Notebook 05 hämtar data från Chrome UX Report och kräver en kostnadsfri API-nyckel från Google. Nyckeln läses från miljövariabeln `CRUX_API_KEY` och ska aldrig checkas in.
+Notebook 05 hämtar data från Chrome UX Report och kräver en kostnadsfri API-nyckel från Google. Nyckeln ska aldrig checkas in. Vi lägger den i filen `python/.env`, som git ignorerar, på en rad.
 
-```sh
-export CRUX_API_KEY="din-nyckel"
 ```
+CRUX_API_KEY=din-nyckel
+```
+
+Notebooks läser filen själva med `python-dotenv`, så Jupyter startas som vanligt. Starta om kerneln om filen skapas medan Jupyter är igång.
 
 ## Data
 

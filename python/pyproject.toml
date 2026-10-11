@@ -12,6 +12,7 @@ dependencies = [
     "pyarrow>=17",
     "matplotlib>=3.9",
     "jupyterlab>=4.2",
+    "python-dotenv>=1.2.4",
 ]
 
 [dependency-groups]
