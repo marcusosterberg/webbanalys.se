@@ -22,7 +22,14 @@ Varje notebook hör till en artikel i serien och är numrerad i samma ordning.
 | `10-analys` | Analysera och visa |
 | `11-pipeline` | Från notebook till pipeline |
 
-Skripten från den sista artikeln hamnar i mappen `pipeline`.
+Skripten från den sista artikeln ligger i mappen `pipeline`. De gör samma sak som notebook 03 till 09, i ett enda kommando.
+
+```sh
+cd python
+uv run python pipeline/kor.py
+```
+
+Med `--utan-hamtning` används rådatan som redan finns i `data/radata`, så att inga källor anropas.
 
 ## Kom igång
 
